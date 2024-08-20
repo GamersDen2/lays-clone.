@@ -1,0 +1,296 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* scroll animation */
+@keyframes scroll {
+  0%{
+    scale: 0;
+  }
+  100%{
+scale: 1;
+  }
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #FFA900; /* Scrollbar background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FFA900; /* Scrollbar thumb color */
+  border-radius: 50%; /* Optional: round the thumb */
+  border: 2px solid transparent; /* Optional: creates a gap effect */
+}
+
+/* For Firefox */
+html {
+  scrollbar-color: yellow #FFA900; /* Thumb color and track color */
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+}
+
+:root {
+  --mainbg: #FBB616;
+  --nav: #000;
+  --heading: #fff;
+  --sub-heading: gray;
+  --bt-color: #DA291C;
+  --bt-text: #fff;
+  --hover-bt-color: #6B21A8;
+  --box-color: #FFE600;
+}
+
+body {
+  background: radial-gradient(gold,orange);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  height: 50px;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100vw;
+  padding: 0 25px; 
+  background-color: var(--box-color);
+}
+
+nav .icon {
+  width: 50px;
+  height: 50px;
+}
+
+ul.nav_buttons {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.nav_buttons li {
+  display: flex;
+  align-items: center;
+}
+
+ul.nav_buttons li a {
+  color: var(--nav);
+  text-decoration: none;
+  padding: 5px 20px;
+  margin: 0 10px;
+  transition: 0.25s;
+  border-radius: 25px;
+}
+.nav_buttons li a:hover {
+  background: var(--bt-color);
+  color: var(--bt-text);
+}
+
+nav ul li .svg {
+  filter: invert(100%);
+  height: 30px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.hero {
+  height: 100vh; /* Full screen height */
+  background: url("material/chip-flying.png");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-color: #f3f3f3; */
+  position: relative;
+}
+
+.lays {
+  position: absolute;
+  top: 20px; /* Fixed from top */
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+   /* z-index: -1; */
+  transition: top 0.3s; /* Smooth transition */
+}
+
+.identity {
+  color: var(--heading);
+  font-weight: 900;
+  text-align: center;
+  font-size: larger;
+}
+
+.tag{
+  text-align: center;
+  font-size: 12em;
+  z-index: -1;
+  padding: 19vh;
+  color: white;
+}
+.chs{
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+}
+
+.swiper-container {
+  display: flex; /* Changed to flex for better card alignment */
+  overflow-x: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  scroll-snap-type: x mandatory; /* Optional: adds snap effect */
+}
+
+.swiper-card {
+  flex: 0 0 auto; /* Prevents flex items from shrinking */
+  width: 400px;
+  height: 600px;
+  margin-right: 20px;
+  background-color: var(--box-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all .25s ease;
+  position: relative;
+  overflow: hidden; /* Ensures that overflow content is hidden */
+}
+
+.swiper-card:hover{
+  transform: translateY(-20px);
+  box-shadow: 5px 5px 10px #272727;
+}
+
+.swiper-card > h3 {
+  position: absolute;
+  width: 100%;
+  bottom: 25%;
+  text-align: center;
+  z-index: 1; /* Ensure text is above other content */
+}
+
+.swiper-card > p {
+  position: absolute;
+  bottom: 8%;
+  width: calc(100% - 20px); /* Ensure text fits inside the card */
+  margin: 0 10px;
+  text-align: center;
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+  /* white-space: nowrap; Prevent text wrapping */
+}
+
+
+.swiper-card:nth-child(1) {
+   background-image: url('material/classic.jpg');
+  }
+  .swiper-card:nth-child(2) {
+   background-image: url('material/onion.jpg'); 
+  }
+.swiper-card:nth-child(3) {
+   background-image: url('material/lays-bbq.jpg'); 
+  }
+.swiper-card:nth-child(4) {
+   background-image: url('material/cheddar.jpg'); 
+  }
+.swiper-card:nth-child(5) {
+   background-image: url('material/spicy.jpg'); 
+  }
+.swiper-card:nth-child(6) {
+  background-image: url('material/flamin hot.png'); 
+}
+
+ .swiper-card {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* background-size: cover;
+  background-position: center; */
+ } 
+/* About Section Styling */
+.about {
+  background-color: var(--box-color); /* Background color from your CSS variables */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  color: var(--nav); /* Text color from your CSS variables */
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2em;
+  color: var(); /* Text color from your CSS variables */
+  line-height: 1.3;
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 700px;
+}
+
+/* Styling the footer */
+footer {
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.b {
+  padding: 30px;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.b>a {
+  margin:4 10px;
+  text-decoration: none;
+  color: var(--nav);
+  padding: 15px;
+  transition: all .5s ease;
+}
+
+.b>a:hover {
+  background: red;
+  color: white;
+}
+
+.media {
+  position: absolute;
+  background-image: url(https://www.lays.com/sites/lays.com/themes/lays/img/bg-contactus-en.jpg?3);
+  background-size: cover;
+  width: 90vw;
+  height: 20vh;
+  top: 20px;
+}
+
+.mediab {
+  position: absolute;
+  right: 10%;
+  overflow: hidden;
+  top: 22%;
+}
+
+.hyp {
+  padding: 22px;
+  transition: all .2s ease-in-out;
+}
+
+.hyp:hover {
+  filter: invert(50%);
+}
