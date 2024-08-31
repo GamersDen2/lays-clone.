@@ -1,7 +1,7 @@
-import gsap from "gsap";
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.168.0/+esm";
+import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three-gltf-loader@1.111.0/index.min.js";
+import { ScrollTrigger } from "https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
